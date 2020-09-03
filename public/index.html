@@ -22,8 +22,13 @@
 
         socket.emit("mensaje", {nombre: "Elvis"})
 
-        socket.on("mensaje", function(payload) {
-            console.log("Escuachando el servidor:", payload)
+        socket.on("nuevo-mensaje", function(payload) {
+            console.log("Escuachando:", payload)
+        });
+
+        socket.on("active-bands", function(payload) {
+            console.clear();
+            console.table(payload);
         });
 
     </script>
